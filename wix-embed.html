@@ -1,0 +1,659 @@
+<!-- Add this Google Fonts link to your Wix page settings or in the <head> section -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --primary: #2563EB;
+  --primary-dark: #1E40AF;
+  --primary-light: #3B82F6;
+  --accent: #F59E0B;
+  --success: #10B981;
+  --bg: #FFFFFF;
+  --bg-light: #F8FAFC;
+  --text: #1F2937;
+  --text-light: #6B7280;
+  --border: #E5E7EB;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  padding: 6rem 1.5rem;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.hero .price {
+  color: var(--accent);
+  display: inline-block;
+}
+
+.hero-tagline {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  opacity: 0.95;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  opacity: 0.9;
+}
+
+.hero-benefit {
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.85;
+}
+
+.cta-primary {
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  padding: 1rem 2.5rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+}
+
+.cta-primary:hover {
+  background: #FBBF24;
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(245, 158, 11, 0.4);
+}
+
+.cta-primary.large {
+  padding: 1.25rem 3rem;
+  font-size: 1.25rem;
+}
+
+/* Trust Bar */
+.trust-bar {
+  background: var(--bg-light);
+  padding: 2rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.trust-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.trust-item .check {
+  color: var(--success);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+/* Sections */
+.section {
+  padding: 5rem 1.5rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.eyebrow {
+  display: inline-block;
+  color: var(--primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.section-header h2 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: var(--text);
+  margin: 0;
+}
+
+/* How It Works */
+.how-it-works {
+  background: var(--bg);
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.step-card {
+  text-align: center;
+  padding: 2rem;
+  background: var(--bg-light);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.step-number {
+  width: 60px;
+  height: 60px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin: 0 auto 1.5rem;
+}
+
+.step-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+}
+
+.step-card p {
+  color: var(--text-light);
+  margin: 0;
+}
+
+.steps-footer {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-light);
+  margin-top: 2rem;
+}
+
+/* Pricing */
+.pricing {
+  background: var(--bg-light);
+}
+
+.pricing-card {
+  max-width: 500px;
+  margin: 0 auto;
+  background: white;
+  border: 2px solid var(--primary);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.pricing-amount {
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.pricing-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 2rem;
+}
+
+.pricing-features {
+  list-style: none;
+  text-align: left;
+}
+
+.pricing-features li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  font-weight: 500;
+}
+
+.pricing-features li:last-child {
+  border-bottom: none;
+}
+
+.pricing-features li::before {
+  content: '✓';
+  color: var(--success);
+  font-weight: 700;
+  margin-right: 0.75rem;
+}
+
+/* Who This Is For */
+.who-for {
+  background: var(--bg);
+}
+
+.who-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.who-item {
+  background: var(--bg-light);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  font-weight: 500;
+  text-align: center;
+}
+
+.who-note {
+  text-align: center;
+  color: var(--text-light);
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+/* Why Choose */
+.why-choose {
+  background: var(--bg-light);
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.why-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  text-align: center;
+}
+
+.why-item strong {
+  color: var(--text);
+  font-size: 1.1rem;
+}
+
+.why-footer {
+  text-align: center;
+  color: var(--text-light);
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+/* Service Area */
+.service-area {
+  background: var(--bg);
+}
+
+.service-area-text {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.cta-tagline {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-secondary {
+  display: inline-block;
+  background: transparent;
+  color: white;
+  padding: 1.25rem 3rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-decoration: none;
+  border: 2px solid white;
+  transition: all 0.2s ease;
+}
+
+.cta-secondary:hover {
+  background: white;
+  color: var(--primary);
+}
+
+.cta-footer {
+  font-size: 1.1rem;
+  font-weight: 600;
+  opacity: 0.9;
+  margin-top: 1rem;
+}
+
+/* Footer */
+.footer {
+  background: var(--text);
+  color: white;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.footer-brand {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer p {
+  margin: 0.5rem 0;
+  opacity: 0.8;
+}
+
+.footer-cert {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    padding: 4rem 1.5rem;
+  }
+
+  .section {
+    padding: 3rem 1.5rem;
+  }
+
+  .trust-items {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .steps-grid,
+  .who-grid,
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .cta-primary,
+  .cta-secondary {
+    width: 100%;
+    text-align: center;
+  }
+}
+</style>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Port St. Lucie DOT Physicals — <span class="price">$89</span></h1>
+    <p class="hero-tagline">In Office or Mobile. We Come to You. No Extra Fees.</p>
+    <p class="hero-description">
+      Certified DOT physicals performed in office or on-site by Dr. Okman.
+    </p>
+    <p class="hero-benefit">
+      Skip the clinic, save time, and stay compliant — fast, simple, and affordable.
+    </p>
+    <a href="#book" class="cta-primary">👉 Book Your DOT Physical</a>
+  </div>
+</section>
+
+<!-- Trust Bar -->
+<section class="trust-bar">
+  <div class="container">
+    <div class="trust-items">
+      <div class="trust-item">
+        <span class="check">✔</span>
+        <span>FMCSA-Certified Medical Examiner</span>
+      </div>
+      <div class="trust-item">
+        <span class="check">✔</span>
+        <span>Same-Day & Scheduled Appointments</span>
+      </div>
+      <div class="trust-item">
+        <span class="check">✔</span>
+        <span>Serving Port St. Lucie & Surrounding Areas</span>
+      </div>
+      <div class="trust-item">
+        <span class="check">✔</span>
+        <span>Flat $89 Price — No Hidden Fees</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Booking Calendar -->
+<section class="section booking-calendar" id="book">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <a href="tel:+19548995505" class="cta-primary large">📞 Call (954) 899-5505</a>
+      <p style="margin-top: 1rem; color: var(--text-light);">or schedule appointment today below</p>
+    </div>
+    <iframe src="https://app.acuityscheduling.com/schedule.php?owner=29952640&owner=29952640&appointmentType=54279426" width="100%" height="800" frameBorder="0" allow="payment"></iframe>
+    <script src="https://embed.acuityscheduling.com/js/embed.js" type="text/javascript"></script>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section class="section how-it-works" id="how-it-works">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">How It Works</span>
+      <h2>DOT Physicals Made Easy</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <h3>Book an Appointment</h3>
+        <p>Schedule online or by phone at a time that works for you.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <h3>Choose Your Location</h3>
+        <p>Visit our office or Dr. Okman comes to your home or business anywhere in Port St. Lucie.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <h3>Complete Your DOT Exam</h3>
+        <p>Your exam is performed efficiently so you can stay compliant and get back to work.</p>
+      </div>
+    </div>
+    <p class="steps-footer">No waiting rooms. No extra charges. No wasted time.</p>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section class="section pricing">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Pricing</span>
+      <h2>Simple, Flat Pricing</h2>
+    </div>
+    <div class="pricing-card">
+      <div class="pricing-amount">$89</div>
+      <div class="pricing-title">DOT Physical — In Office or Mobile</div>
+      <ul class="pricing-features">
+        <li>In office or mobile service available</li>
+        <li>Home or business visit included (mobile)</li>
+        <li>No travel fees</li>
+        <li>No surprise charges</li>
+        <li>One clear price</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Who This Is For -->
+<section class="section who-for">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Who This Is For</span>
+      <h2>Perfect for:</h2>
+    </div>
+    <div class="who-grid">
+      <div class="who-item">Truck drivers & CDL holders</div>
+      <div class="who-item">Owner-operators</div>
+      <div class="who-item">Fleet operators & companies</div>
+      <div class="who-item">Construction, delivery & utility drivers</div>
+      <div class="who-item">Busy drivers who don't want to visit a clinic</div>
+    </div>
+    <p class="who-note">We can handle individuals or multiple drivers at one location.</p>
+  </div>
+</section>
+
+<!-- Why Choose -->
+<section class="section why-choose">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Why Choose Dr. Okman?</span>
+      <h2>Convenience You Can Count On</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <strong>In office or mobile service anywhere in Port St. Lucie</strong>
+      </div>
+      <div class="why-item">
+        <strong>Professional, efficient DOT exams</strong>
+      </div>
+      <div class="why-item">
+        <strong>Clear communication and fast turnaround</strong>
+      </div>
+      <div class="why-item">
+        <strong>Designed around your schedule — not ours</strong>
+      </div>
+    </div>
+    <p class="why-footer">Our goal is to get you examined and cleared as quickly as possible.</p>
+  </div>
+</section>
+
+<!-- Service Area -->
+<section class="section service-area">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Service Area</span>
+      <h2>Port St. Lucie, FL & Nearby Areas</h2>
+    </div>
+    <p class="service-area-text">
+      In office or mobile service available throughout the Port St. Lucie area.
+    </p>
+    <p class="service-area-text">
+      Visit our office or we can come to you — your choice.
+    </p>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="section cta-section" id="book">
+  <div class="container">
+    <h2>Ready to Schedule Your DOT Physical?</h2>
+    <p class="cta-tagline">Avoid the clinic. Save time. Stay compliant.</p>
+    <div class="cta-buttons">
+      <a href="tel:+19548355252" class="cta-primary large">📞 Call Now</a>
+      <a href="#book" class="cta-secondary large">Book Online</a>
+    </div>
+    <p class="cta-footer">DOT Physicals — In Office or Mobile — $89 Flat</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <strong>Dr. Okman – DOT Physicals</strong>
+      </div>
+      <p>Port St. Lucie, Florida</p>
+      <p><a href="tel:+19548995505" style="color: var(--primary); text-decoration: none;">(954) 899-5505</a></p>
+      <p class="footer-cert">FMCSA-Certified Medical Examiner</p>
+    </div>
+  </div>
+</footer>
+
+
+
